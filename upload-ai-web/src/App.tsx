@@ -11,12 +11,18 @@ import {
 	SelectValue
 } from './components/ui/select';
 import { Slider } from './components/ui/slider';
+import { ModeToggle } from './components/mode-toggle';
 
 export function App() {
 	return (
 		<div className="min-h-screen flex flex-col">
-			<div className="px-6 py-3 flex items-center justify-between border-b">
-				<h1 className="text-xl font-bold"> 🤖 upload.ai</h1>
+			<header className="px-6 py-3 flex items-center justify-between border-b">
+				<h1 className="text-xl font-bold flex flex-row gap-2">
+					<span className=" flex items-center justify-center">🤖</span>
+					<p className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+						upload.ai
+					</p>
+				</h1>
 
 				<div className="flex items-center gap-3">
 					<span className="text-sm text-muted-foreground">
@@ -28,35 +34,21 @@ export function App() {
 						className="h-6"
 					/>
 
+					<ModeToggle />
+
+					<Separator
+						orientation="vertical"
+						className="h-6"
+					/>
+
 					<Button variant="outline">
 						<Github className="w-4 h-4 mr-2" />
 						Github
 					</Button>
 				</div>
-			</div>
+			</header>
 
-			<main className="flex-1 p-6 flex gap-6">
-				<div className="flex flex-col flex-1 gap-4">
-					<div className="grid grid-rows-2 gap-4 flex-1">
-						<Textarea
-							className="resize-none p-4 leading-relaxed"
-							placeholder="Inclua o prompt para a IA..."
-						/>
-						<Textarea
-							className="resize-none p-4 leading-relaxed"
-							placeholder="Resultado gerado pela IA"
-							readOnly
-						/>
-					</div>
-
-					<p className="text-sm text-muted-foreground">
-						Lembre-se: você pode utilizar a variável
-						<code className="text-violet-400">{'{transcription}'}</code>
-						no seu prompt para adicionar o conteúdo da transcição do vídeo
-						selecionado.
-					</p>
-				</div>
-
+			<main className="flex flex-1 p-6 gap-6">
 				<aside className="w-80 space-y-6">
 					<form className="space-y-6">
 						<label
@@ -138,7 +130,7 @@ export function App() {
 
 						<Separator />
 
-						<div className="space-y-4">
+						<div className="space-y-2">
 							<Label>Temperatura</Label>
 							<Slider
 								min={0}
@@ -166,6 +158,29 @@ export function App() {
 						</Button>
 					</form>
 				</aside>
+
+				<section className="flex flex-col flex-1 gap-4">
+					<div className="grid grid-rows-2 gap-4 flex-1">
+						<Textarea
+							className="resize-none p-4 leading-relaxed"
+							placeholder="Inclua o prompt para a IA..."
+						/>
+						<Textarea
+							className="resize-none p-4 leading-relaxed"
+							placeholder="Resultado gerado pela IA"
+							readOnly
+						/>
+					</div>
+
+					<p className="text-sm text-muted-foreground">
+						Lembre-se: você pode utilizar a variável &nbsp;
+						<code className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+							&#10100;transcription&#10101;&nbsp;
+						</code>
+						no seu prompt para adicionar o conteúdo da transcição do vídeo
+						selecionado.
+					</p>
+				</section>
 			</main>
 		</div>
 	);
