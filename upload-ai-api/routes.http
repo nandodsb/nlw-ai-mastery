@@ -1,0 +1,41 @@
+GET http://localhost:3344/prompts
+
+###
+
+# @name upload
+
+POST http://localhost:3344/videos
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="bc_sample.mp3"
+Content-Type: audio/mpeg
+
+< ./bc_sample.mp3
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name create-transcription
+
+POST http://localhost:3344/videos/8bbebd68-52d1-423c-adb5-56aef9d8426d/transcription
+Content-Type: application/json
+
+{
+    "prompt": "english, learning, british"
+}
+
+###
+
+# @name generate-ai-completion
+
+POST http://localhost:3344/ai/complete
+Content-Type: application/json
+
+{
+    "videoId": "8bbebd68-52d1-423c-adb5-56aef9d8426d",
+    "temperature": 0.5,
+    "template": "Generate a short summary of the video's transcription explained as follow: '''{transcription}'''"
+
+}
