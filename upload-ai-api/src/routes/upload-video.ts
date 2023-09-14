@@ -46,6 +46,8 @@ export async function uploadVideoRoute(app: FastifyInstance) {
         }
        })
 
-       return reply.status(201).send({ message: video})
+       return reply.status(201).send({
+        video
+       })
     })    
 }
