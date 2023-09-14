@@ -17,6 +17,18 @@ import { PromptSelect } from './components/prompt-select';
 import { useEffect, useState } from 'react';
 import { useCompletion } from 'ai/react';
 import { SkeletonApp } from './components/skeleton-app';
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetDescription,
+	SheetFooter,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger
+} from './components/ui/sheet';
+import { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar';
+import { CardComponent } from './components/card-component';
 
 export function App() {
 	const [isRendering, setIsRendering] = useState(true);
@@ -81,11 +93,39 @@ export function App() {
 								orientation="vertical"
 								className="h-6"
 							/>
+							<Sheet>
+								<SheetTrigger asChild>
+									<Button variant="outline">
+										<Github className="w-4 h-4 mr-2" />
+										Github
+									</Button>
+								</SheetTrigger>
+								<SheetContent>
+									<SheetHeader className="flex justify-center items-center">
+										<Avatar className="h-32 w-32">
+											<AvatarImage
+												src="https://avatars.githubusercontent.com/u/42349534?v=4"
+												alt="@shadcn"
+											/>
+											<AvatarFallback>CN</AvatarFallback>
+										</Avatar>
 
-							<Button variant="outline">
-								<Github className="w-4 h-4 mr-2" />
-								Github
-							</Button>
+										<SheetTitle className="text-center text-md font-extrabold font-sans bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+											NLW AI
+										</SheetTitle>
+
+										<CardComponent />
+
+										<SheetDescription>
+											Understanding the power of Artificial Intelligence
+										</SheetDescription>
+									</SheetHeader>
+
+									<SheetFooter>
+										<SheetClose asChild></SheetClose>
+									</SheetFooter>
+								</SheetContent>
+							</Sheet>
 						</div>
 					</header>
 
