@@ -17,10 +17,11 @@ app.register(uploadVideoRoute)
 app.register(createTranscriptionRoute)
 app.register(generateAICompletionRoute)
 
-
-const port = process.env.PORT || 3344
+const host = '0.0.0.0'
+const port = process.env.PORT ? Number(process.env.port) : 3344
 
 app.listen({
+    host: host,
     port: 3344
 }).then(() => {
     console.log(`⚡Server is running on ${port}`)
