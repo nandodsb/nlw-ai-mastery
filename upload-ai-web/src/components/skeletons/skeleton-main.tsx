@@ -1,18 +1,6 @@
-import { Upload, Wand2 } from 'lucide-react';
 import { Skeleton } from '../ui/skeleton';
-import { Textarea } from '../ui/textarea';
 import { Label } from '../ui/label';
-import { Slider } from '../ui/slider';
 import { Separator } from '../ui/separator';
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue
-} from '../ui/select';
-import { PromptSelect } from '../prompt-select';
-import { Button } from '../ui/button';
 
 export function SkeletonMain() {
 	return (

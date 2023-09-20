@@ -9,7 +9,11 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src",
-    "start": "node dist/server.js",
+    "start": "tsx dist/server.js",
+    "docker:build": "docker build -t upload-ai-api-image .",
+    "docker:run": "docker run --name upload-ai-api-container -p 3344:3344 -d upload-ai-api-image",
+    "docker:stop": "docker container stop upload-ai-api-container", 
+    "docker:remove": "docker container rm upload-ai-api-container",     
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -26,8 +26,6 @@ export function VideoInputForm(props: VideoInputFormProps) {
 	const [status, setStatus] = useState<Status>('waiting');
 	const promptInputRef = useRef<HTMLTextAreaElement>(null);
 
-	// @ts-check
-
 	function handleFileSelected(event: ChangeEvent<HTMLInputElement>) {
 		console.log('Selecting file');
 		const { files } = event.currentTarget;
@@ -75,7 +73,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
 			type: 'audio/mpeg'
 		});
 
-		console.log('Convert finish');
+		console.log('Convert finished');
 
 		return audioFile;
 	}
@@ -125,7 +123,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
 	return (
 		<form
 			onSubmit={handleUploadVideo}
-			className="space-y-6"
+			className="desktop:space-y-6 mobile:w-full"
 		>
 			<label
 				htmlFor="video"
@@ -163,11 +161,12 @@ export function VideoInputForm(props: VideoInputFormProps) {
 					placeholder="Inclua palavras-chave mencionadas no vídeo separadars por vírgula (,)"
 				/>
 			</div>
+
 			<Button
 				data-success={status === 'success'}
 				disabled={status !== 'waiting'}
 				type="submit"
-				className="w-full data-[success=true]:bg-green-400"
+				className="w-full h-10 mb-2 data-[success=true]:bg-gradient-to-r from-green-300 to-green-500"
 			>
 				{status === 'waiting' ? (
 					<>

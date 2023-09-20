@@ -64,14 +64,7 @@ Transcrição:
 
 Abaixo você receberá uma transcrição desse vídeo, use essa transcrição para gerar a lista.
 
-A lista deve possuir 3 títulos de ívdeos relacionados.
-
-Retorne APENAS os três títulos em formato de lista como no exemplo abaixo:
-'''
-- Título 1
-- Título 2
-- Título 3
-'''
+A lista deve possuir no máximo 100 palavras em primeira pessoa contendo os pontos principais do vídeo.
 
 Use palavras chamativas e que cativam a atenção de quem está lendo.
 

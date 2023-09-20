@@ -2,3 +2,10 @@ node_modules
 .env
 build
 dist
+
+tmp
+output-*
+bc_sample-*
+sample-3s-*
+
+docker-compose.yml

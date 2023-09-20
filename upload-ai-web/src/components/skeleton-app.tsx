@@ -1,5 +1,4 @@
 import { SkeletonHeader } from './skeletons/skeleton-header';
-import { SkeletonLayout } from './skeletons/skeleton-layout';
 import { SkeletonMain } from './skeletons/skeleton-main';
 
 export function SkeletonApp() {

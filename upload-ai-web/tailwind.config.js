@@ -1,19 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: [ "class" ],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   theme: {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+
+    },
+    screens: {
+      'mobile': '380px',
+      'tablet': '640px',
+      'laptop': '1024px',
+      'desktop': '1280px',
+      'ultrawide': '1536px',
+
+      // 'xs': { 'max': '475px' },
+      // 'sm': { 'min': '640px', 'max': '767px' },
+      // 'md': { 'min': '768px', 'max': '1023px' },
+      // 'lg': { 'min': '1024px', 'max': '1279px' },
+      // 'xl': { 'min': '1280px', 'max': '1535px' },
+      // '2xl': { 'min': '1536px' },
+
     },
     extend: {
       colors: {
@@ -72,5 +85,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [ require("tailwindcss-animate") ],
 }
