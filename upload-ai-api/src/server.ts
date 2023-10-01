@@ -9,7 +9,7 @@ import { generateAICompletionRoute } from './routes/generate-ai-completion';
 const app = fastify();
 
 app.register(fastifyCors, {
-    origin: "*",
+    origin: process.env.ORIGIN_URL,
 })
 
 app.register(getAllPromptsRoute)
