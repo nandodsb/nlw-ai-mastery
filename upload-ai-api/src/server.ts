@@ -9,7 +9,7 @@ import { generateAICompletionRoute } from './routes/generate-ai-completion';
 const app = fastify();
 
 app.register(fastifyCors, {
-    origin: 'https://nlw-ai-mastery-sage.vercel.app'
+    origin: process.env.ORIGIN_URL
 })
 
 app.register(getAllPromptsRoute)
