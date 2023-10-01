@@ -7,7 +7,6 @@ import {
 	SelectValue
 } from './ui/select';
 import { api } from '@/lib/axios';
-import { AxiosResponse } from 'axios';
 
 interface Prompt {
 	id: string;
@@ -23,16 +22,14 @@ export function PromptSelect(props: PromptSelectProps) {
 	const [prompts, setPrompts] = useState<Prompt[] | null>(null);
 
 	useEffect(() => {
-		api.get('/prompts').then((response: AxiosResponse) => {
+		api.get('/prompts').then((response) => {
 			//console.log(response.data);
 			setPrompts(response.data);
 		});
 	}, []);
 
 	function handlePromptSelected(promptId: string) {
-		const selectedPrompt = prompts?.find(
-			(prompt: Prompt) => prompt.id === promptId
-		);
+		const selectedPrompt = prompts?.find((prompt) => prompt.id === promptId);
 
 		if (!selectedPrompt) {
 			return;
@@ -47,7 +44,7 @@ export function PromptSelect(props: PromptSelectProps) {
 				<SelectValue placeholder="Selecione um prompt..." />
 			</SelectTrigger>
 			<SelectContent>
-				{prompts?.map((prompt: Prompt) => {
+				{prompts?.map((prompt) => {
 					return (
 						<SelectItem
 							key={prompt.id}
