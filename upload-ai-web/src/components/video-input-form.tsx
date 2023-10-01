@@ -14,7 +14,7 @@ const statusMessages = {
 	converting: 'Convertendo...',
 	generating: 'Transcrevendo...',
 	uploading: 'Enviando...',
-	success: 'Concluído!'
+	success: 'Concluído.'
 };
 
 interface VideoInputFormProps {
@@ -73,7 +73,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
 			type: 'audio/mpeg'
 		});
 
-		console.log('Convert finished');
+		console.log('Convert finished.');
 
 		return audioFile;
 	}
