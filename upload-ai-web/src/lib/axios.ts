@@ -1,10 +1,7 @@
 import axios from 'axios'
-import dotenv from 'dotenv'
-
-dotenv.config()
 
 export const api = axios.create({
-    baseURL: process.env.REACT_APP_BASE_URL,
+    baseURL: `${import.meta.env.VITE_APP_API_URL}`,
     headers: {
         "Content-type": "application/json",
       },
