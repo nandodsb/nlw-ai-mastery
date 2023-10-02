@@ -5,7 +5,6 @@ import { uploadVideoRoute } from './routes/upload-video';
 import { createTranscriptionRoute } from './routes/create-transcription';
 import { generateAICompletionRoute } from './routes/generate-ai-completion';
 
-
 const app = fastify();
 
 app.register(fastifyCors, {
