@@ -6,8 +6,9 @@ import fs from "node:fs"
 import { pipeline } from "node:stream"
 import { randomUUID } from "node:crypto";
 import { promisify } from "node:util";
-
 import { prisma} from "../lib/prisma";
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 const pump = promisify(pipeline)
 
@@ -34,7 +35,8 @@ export async function uploadVideoRoute(app: FastifyInstance) {
        const fileBaseName = path.basename(data.filename, extension)
        const fileUploadName = `${fileBaseName}-${randomUUID()}${extension}`
 
-       const uploadDestination = path.resolve(__dirname, '../../tmp', fileUploadName)
+    //    const uploadDestination = path.resolve(__dirname, '../../tmp', fileUploadName)
+       const uploadDestination = path.resolve(`${process.env.DATABASE_URL}`, fileUploadName)
 
        await pump(data.file, fs.createWriteStream(uploadDestination))
 
