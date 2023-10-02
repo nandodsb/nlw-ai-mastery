@@ -3,7 +3,6 @@ node_modules
 build
 dist
 
-tmp
 output-*
 bc_sample-*
 sample-3s-*
