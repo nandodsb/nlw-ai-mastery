@@ -24,5 +24,5 @@ app.listen({
     host: host,
     port: 3344
 }).then(() => {
-    console.log(`⚡Server is running on ${port}`)
+    console.log(`⚡ Server is running on ${port}!`)
 })
