@@ -10,6 +10,7 @@
     "dev": "tsx watch src/server.ts",
     "build": "tsup src",
     "start": "tsx dist/server.js",
+    "db:seed": "pnpm dlx prisma db seed",
     "docker:build": "docker build -t upload-ai-api-image .",
     "docker:run": "docker run --name upload-ai-api-container -p 3344:3344 -d upload-ai-api-image",
     "docker:stop": "docker container stop upload-ai-api-container", 

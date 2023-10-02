@@ -19,7 +19,6 @@ import { useCompletion } from 'ai/react';
 import { SkeletonApp } from './components/skeleton-app';
 import { SheetComponent } from './components/sheet-component';
 import { Intro } from './components/intro';
-import { api } from './lib/axios';
 
 export function App() {
 	const [isPresenting, setIsPresenting] = useState(true);
@@ -35,7 +34,7 @@ export function App() {
 		completion,
 		isLoading
 	} = useCompletion({
-		api: `${api}/ai/complete`,
+		api: `/ai/complete`,
 		body: {
 			videoId,
 			temperature

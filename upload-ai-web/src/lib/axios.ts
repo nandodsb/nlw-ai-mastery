@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const api = axios.create({
-    baseURL: "https://upload-ai-api-84uq.onrender.com",   
+    baseURL: import.meta.env.VITE_APP_API_URL,   
 })

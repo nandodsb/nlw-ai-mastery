@@ -108,7 +108,6 @@ export function VideoInputForm(props: VideoInputFormProps) {
 		});
 
 		setStatus('success');
-
 		props.onVideoUploaded(videoId);
 	}
 
